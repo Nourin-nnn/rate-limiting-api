@@ -64,12 +64,14 @@ source venv/bin/activate
 After activation, terminal prompt will change to show the virtual environment's name, indicating that we are now working inside it.
 
 ### Install Dependencies
+
 With the virtual environment activated, run:
 
 ```bash
 pip install -r requirements.txt
 ```
 ### Configuration
+
 Before running the application, we have to make sure to configure the Redis client in main.py:
 
 ```python
@@ -78,6 +80,7 @@ redis_client = redis.StrictRedis(host='your-redis-host', port=your-redis-port, d
 ```
 
 ## Running the Application
+
 To start the FastAPI application, run:
 
 ```bash
@@ -86,16 +89,18 @@ uvicorn main:app --reload
 We can access the API at http://localhost:8000.
 
 ## API Endpoints
+
 GET /data: Fetches data and checks the rate limit for the IP address.
 GET /: Welcome message.
 
 ## Screenshots
-![API Response Example](Images\2.png)
-![Rate Limit Exceeded Example](Images\3.png)
-![Welcome Message Example](Images\1.png)
 
+- API Response Example ![API Response](Images/2.png)
+- Rate Limit Exceeded Example ![Rate Limit Exceeded](Images/3.png)
+- Welcome Message Example ![Welcome Message](Images/1.png)
 
 ## License
+
 This project does not have a specific license. Feel free to use and modify it as you wish.
 
 
