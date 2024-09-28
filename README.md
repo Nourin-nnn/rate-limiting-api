@@ -95,9 +95,9 @@ GET /: Welcome message.
 
 ## Screenshots
 
+- Welcome Message Example ![Welcome Message](Images/1.png)
 - API Response Example ![API Response](Images/2.png)
 - Rate Limit Exceeded Example ![Rate Limit Exceeded](Images/3.png)
-- Welcome Message Example ![Welcome Message](Images/1.png)
 
 ## License
 
