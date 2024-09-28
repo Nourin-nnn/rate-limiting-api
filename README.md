@@ -35,3 +35,10 @@ Create the Virtual Environment:
 
 ```bash
 python -m venv venv
+```
+
+
+## Screenshots
+![API Response Example](path/to/your/screenshot1.png)
+![Rate Limit Exceeded Example](path/to/your/screenshot2.png)
+![Welcome Message Example](path/to/your/screenshot3.png)
