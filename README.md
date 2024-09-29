@@ -1,15 +1,12 @@
 # Rate Limiting API
 
-This is a FastAPI application that implements a simple rate limiting mechanism using Redis. The API allows clients to fetch data while limiting the number of requests that can be made in a given time frame.
+This project is a FastAPI application that implements a rate-limiting mechanism using Redis. It allows clients to make a limited number of requests to the API within a specified time window i.e., 5 requests per minute.
 
 ## Table of Contents
-
 - [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Setup](#setup)
-  - [Set Up Virtual Environment](#set-up-virtual-environment)
-  - [Install Dependencies](#install-dependencies)
-  - [Configuration](#configuration)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
 - [Screenshots](#screenshots)
@@ -17,21 +14,26 @@ This is a FastAPI application that implements a simple rate limiting mechanism u
 
 ## Features
 
-- Rate limiting for IP addresses
-- Simple RESTful API
-- Built using FastAPI and Redis
+- **Rate Limiting**: Limits the number of requests per IP address.
+- **Easy to Use**: Simple API endpoints for interaction.
 
-## Technologies Used
+## Getting Started
 
+### Prerequisites
+
+- Python 3.7 or higher
+- Redis (cloud-hosted or local)
 - FastAPI
-- Redis
-- Python
+- Redis Python library
 
-## Setup
+### Installation
 
-### Set Up Virtual Environment
-
-Create the Virtual Environment:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Nourin-nnn/rate-limiting-api.git
+   cd rate-limiting-api
+   ```
+2. Create the Virtual Environment:
 
 ```bash
 python -m venv venv
@@ -63,30 +65,30 @@ source venv/bin/activate
 ```
 After activation, terminal prompt will change to show the virtual environment's name, indicating that we are now working inside it.
 
-### Install Dependencies
-
-With the virtual environment activated, run:
+3. Install the required packages:
 
 ```bash
-pip install -r requirements.txt
+pip install fastapi redis uvicorn
 ```
-### Configuration
-
-Before running the application, we have to make sure to configure the Redis client in main.py:
+4. Update the main.py file with your Redis connection details:
 
 ```python
-redis_client = redis.StrictRedis(host='your-redis-host', port=your-redis-port, db=0, decode_responses=True)
-# Replace your-redis-host and your-redis-port with the appropriate values for your Redis instance.
+# Initialize Redis client with cloud-hosted settings
+redis_client = redis.StrictRedis(
+    host='Cloud Redis host', 
+    port=Cloud Redis port,                                                            
+    password='Replace with your actual password',                                
+    decode_responses=True
+)
 ```
-
 ## Running the Application
-
-To start the FastAPI application, run:
+To run the FastAPI application, use:
 
 ```bash
 uvicorn main:app --reload
 ```
-We can access the API at http://localhost:8000.
+The API will be accessible at http://127.0.0.1:8000/
+
 
 ## API Endpoints
 
@@ -108,4 +110,10 @@ This project does not have a specific license. Feel free to use and modify it as
 
 1. **Replace** the `path/to/your/screenshotX.png` with the actual paths to your screenshot files.
 2. Make sure to provide any necessary instructions regarding the Redis configuration.
+
+
+
+
+
+
 
