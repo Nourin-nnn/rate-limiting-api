@@ -27,7 +27,7 @@ This project is a FastAPI application that implements a rate-limiting mechanism 
 - Python 3.7 or higher
 - Redis (cloud-hosted or local)
 - FastAPI
-- Docker
+- Docker 
 - Redis Python library
 
 ### Installation
@@ -75,7 +75,7 @@ After activation, terminal prompt will change to show the virtual environment's 
 pip install fastapi redis uvicorn
 ```
 
-5. Install Redis locally or set it up using Docker (recommended for ease of use):
+5. Set Up Redis: Install Redis locally or set it up using Docker (recommended for ease of use):
 ```bash
 docker run --name redis -p 6379:6379 -d redis
 ```
