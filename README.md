@@ -1,12 +1,13 @@
 # Rate Limiting API
 
-This project is a FastAPI application that implements a rate-limiting mechanism using Redis. It allows clients to make a limited number of requests to the API within a specified time window i.e., 5 requests per minute.
+This project is a FastAPI application that implements a rate-limiting mechanism using Redis. Clients are restricted to 5 requests per minute, based on their IP address.
 
 ## Table of Contents
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+  - [Docker Setup](#docker-setup)
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
 - [Screenshots](#screenshots)
@@ -15,7 +16,9 @@ This project is a FastAPI application that implements a rate-limiting mechanism 
 ## Features
 
 - **Rate Limiting**: Limits the number of requests per IP address.
-- **Easy to Use**: Simple API endpoints for interaction.
+- **FastAPI**: Fast and asynchronous API framework.
+- **Redis**: Backend for managing rate limits.
+- **Dockerized**: Easily start the app and Redis using Docker.
 
 ## Getting Started
 
@@ -24,6 +27,7 @@ This project is a FastAPI application that implements a rate-limiting mechanism 
 - Python 3.7 or higher
 - Redis (cloud-hosted or local)
 - FastAPI
+- Docker
 - Redis Python library
 
 ### Installation
@@ -41,7 +45,7 @@ python -m venv venv
 
 This command creates a directory named venv in the project folder, which will contain the necessary files for the virtual environment.
 
-Activate the Virtual Environment:
+3. Activate the Virtual Environment:
 
 For Git Bash (MINGW64) on Windows:
 
@@ -65,12 +69,17 @@ source venv/bin/activate
 ```
 After activation, terminal prompt will change to show the virtual environment's name, indicating that we are now working inside it.
 
-3. Install the required packages:
+4. Install the required packages:
 
 ```bash
 pip install fastapi redis uvicorn
 ```
-4. Update the main.py file with your Redis connection details:
+
+5. Install Redis locally or set it up using Docker (recommended for ease of use):
+```bash
+docker run --name redis -p 6379:6379 -d redis
+```
+6. Update the main.py file with your Redis connection details:
 
 ```python
 # Initialize Redis client with cloud-hosted settings
