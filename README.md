@@ -7,7 +7,6 @@ This project is a FastAPI application that implements a rate-limiting mechanism 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Docker Setup](#docker-setup)
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
 - [Screenshots](#screenshots)
